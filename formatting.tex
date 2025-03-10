@@ -1,0 +1,102 @@
+\usepackage{titlesec}
+\usepackage[dvipsnames]{xcolor}
+\definecolor{primaryColor}{RGB}{0, 79, 144}
+\usepackage{enumitem}
+\usepackage{fontawesome5}
+\usepackage{amsmath}
+\usepackage[pscoord]{eso-pic}
+\usepackage{calc}
+\usepackage{lastpage}
+\usepackage{changepage}
+\usepackage{paracol}
+\usepackage{needspace}
+
+\AtBeginEnvironment{adjustwidth}{\partopsep0pt}
+
+\pagestyle{empty}
+\setcounter{secnumdepth}{0}
+\setlength{\parindent}{0pt}
+\setlength{\topskip}{0pt}
+\setlength{\columnsep}{0cm}
+\makeatletter
+\let\ps@customFooterStyle\ps@plain
+\patchcmd{\ps@customFooterStyle}{\thepage}{
+    \color{gray}\textit{\small Nadjib Ferhat - Page \thepage{} of
+    \pageref*{LastPage}}
+}{}{}
+\makeatother
+\pagestyle{customFooterStyle}
+
+% Custom formatting for sections
+\titleformat{\section}
+{\needspace{4\baselineskip}\bfseries\large}
+{}
+{0pt}
+{}[\titlerule\vspace{0.5pt}]
+% Custom spacing for sections
+\titlespacing{\section}{-1pt}{0.3 cm}{0.2 cm}
+
+% Prettier dot (that is used in math) for list bullets
+\renewcommand\labelitemi{$\circ$}
+\newcommand\labelsubitemi{$\bullet$}
+
+% Highlights, IE main points of some experience, education, etc
+\newenvironment{highlights}
+{
+    \begin{itemize}[
+            topsep=0.10 cm,
+            parsep=0.10 cm,
+            partopsep=0pt,
+            itemsep=-2pt,
+            leftmargin=0.4 cm + 10pt
+        ]
+    }
+        {
+    \end{itemize}
+}
+
+% Single column entry, to distinguish items in sections
+\newenvironment{onecolentry}
+{
+    \begin{adjustwidth}{ 0.2 cm + 0.00001 cm }{ 0.2 cm + 0.00001 cm }
+    }
+    {
+    \end{adjustwidth}
+}
+
+% Two column entry, to have some additional text aligned at the right of the document.
+% <Left text>                                                      Some date | (end of doc)
+\newenvironment{twocolentry}[2][]
+{
+    \onecolentry
+    \def\secondColumn{#2}
+    \setcolumnwidth{\fill, 4.5 cm}
+    \begin{paracol}{2}
+}
+{
+    \switchcolumn \raggedleft \secondColumn
+    \end{paracol}
+    \endonecolentry
+}
+
+% The last updated text, we only put this on the first page, though.
+% Keep it in a variable to calculate its width
+\newcommand{\lastUpdatedText}{Last updated in March 2025}
+\newcommand{\placeLastUpdatedText}
+{
+    \AddToShipoutPictureFG*{
+        \put(
+            \LenToUnit{\paperwidth-2 cm-0.2 cm+0.05cm},
+            \LenToUnit{\paperheight-1.0 cm}
+        )
+        {
+            \vtop{
+                {\null}\makebox[0pt][c]{
+                    \small\color{gray}\textit{\lastUpdatedText{}}
+                    \hspace{\widthof{\lastUpdatedText{}}}
+                }
+            }
+        }
+    }
+}
+

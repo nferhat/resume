@@ -1,0 +1,236 @@
+\documentclass[10pt, letterpaper]{article}
+
+% PDF document setup
+\usepackage[pdftitle={Nadjib Ferhat's CV}, pdfauthor={Nadjib Ferhat}, colorlinks=true, urlcolor=primaryColor]{hyperref}
+\usepackage[ignoreheadfoot, margin=0.75in, footskip=1.0cm]{geometry}
+
+% Embedding documents
+\usepackage{navigator}
+\embeddedfile{ielts_score}{DZ01524503997-09-11-2024-ETRF.pdf}
+\embeddedfile{bac}{BAC.pdf}
+
+% Title formatting, custom environment, etc.
+\input{formatting}
+
+\ifPDFTeX
+% Make the outputed PDF machine readable for automatic CV/Resume list rankings
+\input{glyphtounicode}
+\pdfgentounicode=1
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\fi
+
+\begin{document}
+\placeLastUpdatedText
+
+% ====================================================================================================================
+% Header: name in big, contacts
+
+\newcommand\linkedinProfile{nferhat}
+\newcommand\githubProfile{nferhat}
+\newcommand\contactEmail{nadjib.ferhat@etu.usthb.dz}
+
+\begin{center}
+    \textbf{\fontsize{24 pt}{24 pt}\selectfont Nadjib Ferhat}
+
+    \vspace{0.3 cm}
+
+    \normalsize
+    \mbox{{\color{black}\footnotesize\faMapMarker*}\hspace*{0.07cm}Algeria, Algiers}%
+    \kern 0.50 cm%
+    \mbox{\href{mailto:\contactEmail}{\color{black}{\footnotesize\faEnvelope[regular]}\hspace*{0.07cm}\contactEmail}}%
+    \kern 0.50 cm%
+    \mbox{\href{https://linkedin.com/in/\linkedinProfile}{\color{black}{\footnotesize\faLinkedinIn}\hspace*{0.07cm}\linkedinProfile}}%
+    \kern 0.50 cm%
+    \mbox{\href{https://github.com/\githubProfile}{\color{black}{\footnotesize\faGithub}\hspace*{0.07cm}\githubProfile}}%
+\end{center}
+
+% ====================================================================================================================
+% Quick summary about myself, to get an idea of who I am.
+
+% TODO: Rework this summary
+\begin{onecolentry}
+    First year Computer Engineering student at
+    \href{https://usthb.dz}{University of Science and Technology Houari
+    Boumediene}. Has strong interest and passion for \textbf{UI/UX
+    design}, \textbf{graphics programming}, and
+    \textbf{Linux}
+\end{onecolentry}
+
+\vspace{0.3cm}
+
+% ====================================================================================================================
+% Education section: Studies, duh
+
+\section{Education}
+
+\begin{twocolentry}{\textit{Sept 2024 - June 2025}}
+    \textbf{University of Science and Technology Houari Boumediene} \\
+    \textit{First year in Computer Engineering}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item \textbf{Coursework:} Calculus, Algorithms and Data
+        structures, Operating System Engineering, Computer Architecture.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.05cm}
+
+\begin{twocolentry}{\textit{June 2024}}
+    \openfilelink{BAC.pdf}{\textbf{Lyc\'ee International Alexandre Dumas \footnotesize\faLink}} \\
+    \textit{High School Degree}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item \textbf{Final average:} 15.88/20.0
+    \item \textbf{Coursework:} Mathematics, Physics, Philosophy, Frecnh language and literature.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+% ====================================================================================================================
+% Projects & Experience section: Diffent key points that helped me form my skills
+
+\section{Projects \& Experiences}
+
+\begin{twocolentry} {\textit{Nov 2024} \\ \textit{Algeria, Saida}}
+    \textbf{Fennec Linux Hackathon} \\
+    \textit{\href{https://univ-saida.dz}{USMT}}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Automate the build of a Linux-From-Stratch distribution, with
+        the possibility to configure different aspects of it through a
+        user-friendly interface.
+    \item Work on deploying said distribution, \textit{Fennec Linux} to systems
+        in administrations, classrooms, and other places such as smart
+        university campuses, using tools such as Ubuntu MAAS.
+    \item Achieve first place the second youngest participant.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{twocolentry}{\textit{\href{https://github.com/nferhat/fht-compositor}{\footnotesize\faGithub
+    \  nferhat/fht-compositor}}}
+    \textbf{Wayland Compositor}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Developed a custom graphical environment to suits my needs in order to
+        achieve a keyboard-centric workflow where using the mouse is not as necessary.
+    \item Publish and support users that try to use it via issue-tracking and pull requests on
+        GitHub.
+    \item \textbf{Tools used}: Rust, Wayland, OpenGL, C, Nix.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \textbf{Top-Down math expression parser}
+\end{onecolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Wrote a math expression parser and evaluator, allowing the user to enter and get a result
+        that's evaluated with respect to PEMDAS.
+    \item Supports Unicode codepoints for expression evaluation: $\sqrt{}x$, $\pm\infty$, and
+        variable names: $\alpha, \beta, \gamma, ...$
+    \item \textbf{Tools used}: Rust.
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.10 cm}
+
+\begin{onecolentry}
+    \textbf{friends-gpt}
+\end{onecolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Small-scale chatbot AI trained on a dataset made of ~1 million messages from
+        conversations between me and my friend group.
+    \item \textbf{Tools used}: Python, PyTorch, Shell scripting (for scraping and filtering data).
+    \end{highlights}
+\end{onecolentry}
+
+\vspace{0.15cm}
+
+\begin{twocolentry} {\textit{Dec 2024} \\ \textit{USTHB}}
+    \textbf{Ideathon} \\
+    \textit{\href{https://www.microclub.info/}{MicroClub}}
+\end{twocolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item A two week long online hackathon where teams of seven group up and
+        coordinate making a startup idea
+    \item Learned 3d design and coordinated with my team to design and prototype
+        a digital bracelet made for tracking children.
+    \item \textbf{Tools used}: Blender
+
+    \end{highlights}
+\end{onecolentry}
+
+% ====================================================================================================================
+% Skills: My toolbox, basically
+
+\section{Skills}
+\begin{onecolentry}
+    \textbf{Programming languages:} C, Rust, Bash, Nix, Lua, Python.
+
+    \textbf{Tools/Libraries:} OpenGL, WGPU, Nix (Package Manager),
+        Shell Scripting, GTK, Figma, Blender.
+\end{onecolentry}
+
+% ====================================================================================================================
+
+\newpage
+
+\section{Volunteering}
+
+\begin{onecolentry}
+    \textbf{Leadership role}: Presented myself to be the the section delegate during my first year
+    as a Computer Engineering student, being the spokesperson relaying complaints and suggestions from ~170
+    students in my section, aswell as keeping them updated on the latest documents, reschedules, and other
+    key information provided by the administration and professors.
+
+    \vspace{0.10cm}
+
+    \textbf{Community management}: Helped to managed a small-scale study group with the help of my
+    middle school administration in order to help eight and ninth grade students share study resources
+    (like mock exams, additional work sheets) and maintain rules to ensure that nothing go wrong between
+    students.
+\end{onecolentry}
+
+
+% ====================================================================================================================
+
+\section{Languages}
+
+
+\vspace{0.05cm}
+
+\begin{onecolentry}
+    \textbf{Arabic}: Native speaker, fluent.
+\end{onecolentry}
+
+\vspace{0.05cm}
+
+\begin{onecolentry}
+    \textbf{French}: Native speaker, fluent.
+\end{onecolentry}
+
+\begin{onecolentry}
+    \textbf{English}
+\end{onecolentry}
+\begin{onecolentry}
+    \begin{highlights}
+    \item Acquired language, fluent in speaking and writing.
+    % FIXME: Link to my IELTS score?
+    \item \openfilelink{DZ01524503997-09-11-2024-ETRF.pdf}{7.5 IELTS score \footnotesize\faLink}
+    \end{highlights}
+\end{onecolentry}
+
+
+\end{document}
