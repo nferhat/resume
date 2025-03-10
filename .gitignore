@@ -1,3 +1,5 @@
 .direnv
 *.log
 *.out
+# out file, will be included with release instead
+resume.pdf
